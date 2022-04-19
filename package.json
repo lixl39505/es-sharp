@@ -1,6 +1,6 @@
 {
     "name": "es-sharp",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "collection of commonly used js functions",
     "main": "dist/es-sharp.min.js",
     "scripts": {
