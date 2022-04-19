@@ -1,6 +1,16 @@
 import pathJoin from 'string/path-join'
 
 describe('path-join', function () {
+    it('empty', function () {
+        pathJoin().should.equal('.')
+        pathJoin('').should.equal('.')
+
+        Should.Throw(
+            () => pathJoin('', 2),
+            'The "pathJoin" argument must be of type string'
+        )
+    })
+
     it('absolute path', function () {
         // concat
         pathJoin('/a', '/b', '/c').should.equal('/a/b/c')

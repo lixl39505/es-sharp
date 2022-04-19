@@ -1,7 +1,7 @@
 import qs from 'string/qs'
 
-describe('完整url解析', function () {
-    it('空场景', function () {
+describe('url', function () {
+    it('empty', function () {
         qs.parse('https://www.baidu.com/').should.deep.equal({})
         qs.parse('https://www.baidu.com/?').should.deep.equal({})
         qs.parse('https://www.baidu.com/s').should.deep.equal({})
@@ -11,14 +11,14 @@ describe('完整url解析', function () {
         qs.parse('https://www.baidu.com/s?#main').should.deep.equal({})
     })
 
-    it('常规场景', function () {
+    it('normal', function () {
         qs.parse('https://www.baidu.com/s?wd=a&rsv_spt=1').should.deep.equal({
             wd: 'a',
             rsv_spt: '1',
         })
     })
 
-    it('数组参数', function () {
+    it('array', function () {
         qs.parse('https://www.baidu.com/s?wd=a&p[]=1&p[]=2').should.deep.equal({
             wd: 'a',
             p: ['1', '2'],
@@ -30,7 +30,7 @@ describe('完整url解析', function () {
         })
     })
 
-    it('冗余参数测试', function () {
+    it('redundant', function () {
         qs.parse('https://www.baidu.com/s?wd=a&&rsv_spt=1&').should.deep.equal({
             wd: 'a',
             rsv_spt: '1',
@@ -45,8 +45,8 @@ describe('完整url解析', function () {
     })
 })
 
-describe('字符串解析', function () {
-    it('空场景', function () {
+describe('string', function () {
+    it('empty', function () {
         qs.parse('').should.deep.equal({})
         qs.parse('?').should.deep.equal({})
         qs.parse('/s').should.deep.equal({})
@@ -56,14 +56,14 @@ describe('字符串解析', function () {
         qs.parse('/s?#main').should.deep.equal({})
     })
 
-    it('常规场景', function () {
+    it('normal', function () {
         qs.parse('/s?wd=a&rsv_spt=1').should.deep.equal({
             wd: 'a',
             rsv_spt: '1',
         })
     })
 
-    it('数组参数', function () {
+    it('array', function () {
         qs.parse('/s?wd=a&p[]=1&p[]=2').should.deep.equal({
             wd: 'a',
             p: ['1', '2'],
@@ -75,7 +75,7 @@ describe('字符串解析', function () {
         })
     })
 
-    it('冗余参数测试', function () {
+    it('redundant', function () {
         qs.parse('/s?wd=a&&rsv_spt=1&').should.deep.equal({
             wd: 'a',
             rsv_spt: '1',
@@ -85,19 +85,24 @@ describe('字符串解析', function () {
             wd: 'a',
             rsv_spt: '1',
         })
+
+        qs.parse('/s?p=1&p=2&p=3').should.eql({
+            p: ['1', '2', '3'],
+        })
     })
 })
 
-describe('序列化测试', function () {
-    it('空值', function () {
+describe('stringify', function () {
+    it('empty', function () {
         qs.stringify().should.eq('')
     })
 
-    it('空对象', function () {
+    it('empty objj', function () {
         qs.stringify({}).should.eq('')
     })
 
-    it('参数非空', function () {
+    it('params', function () {
         qs.stringify({ a: 1, p: [1, 2] }).should.eq('a=1&p=1&p=2')
+        qs.stringify({ a: null }).should.eq('a=')
     })
 })
