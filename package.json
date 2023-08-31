@@ -2,7 +2,13 @@
     "name": "es-sharp",
     "version": "1.4.0",
     "description": "collection of commonly used js functions",
+    "files": [
+        "dist",
+        "lib"
+    ],
     "main": "dist/es-sharp.min.js",
+    "module": "lib/index.js",
+    "sideEffects": false,
     "scripts": {
         "dev": "webpack-dev-server --open --config build/webpackrc.dev.js",
         "build": "webpack --config build/webpackrc.prod.js",
