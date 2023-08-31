@@ -1,4 +1,4 @@
-import { partial, once, runQueue, throttle, debounce } from '@/index'
+import { partial, once, throttle, debounce } from '@/fp'
 import sinon from 'sinon'
 
 // 重复执行
@@ -36,21 +36,6 @@ describe('fp', function () {
         target()
 
         source.calledOnce.should.be.equal(true)
-    })
-    it('runQueue', function (done) {
-        runQueue(
-            [1, 2, 3],
-            (v, next) => next(),
-            (err, over) => {
-                try {
-                    over.should.equal(true)
-                } catch (e) {
-                    err = e
-                }
-
-                done(err)
-            }
-        )
     })
 
     it('throttle', function (done) {
