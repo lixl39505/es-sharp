@@ -1,4 +1,4 @@
-import pathJoin from 'string/path-join'
+import { pathJoin } from 'string/path-join'
 
 describe('path-join', function () {
     it('empty', function () {

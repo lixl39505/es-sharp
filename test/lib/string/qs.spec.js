@@ -1,4 +1,4 @@
-import qs from 'string/qs'
+import { qs } from 'string/qs'
 
 describe('url', function () {
     it('empty', function () {

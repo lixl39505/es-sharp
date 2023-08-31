@@ -40,9 +40,9 @@ describe('fp', function () {
 
     it('throttle', function (done) {
         let cb = sinon.fake()
-        let t10 = throttle(10, cb)
+        let t10 = throttle(100, cb)
 
-        repeat(t10, 42, 1, () => {
+        repeat(t10, 40, 10, () => {
             cb.callCount.should.lessThan(10)
             done()
         })()

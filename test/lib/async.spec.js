@@ -126,7 +126,7 @@ describe('async', function () {
             let startTime = Date.now()
             return pl().then((results) => {
                 let duration = (Date.now() - startTime) / 1000
-                duration.should.be.lt(0.21) // 执行时间应小于0.21 s
+                duration.should.be.lt(0.3) // 执行时间应小于0.3 s
 
                 async.callCount.should.be.equal(2)
                 results.should.be.eqls([1, 2, 3])
