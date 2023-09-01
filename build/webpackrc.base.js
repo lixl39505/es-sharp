@@ -11,11 +11,15 @@ module.exports = {
         [libName + '.min']: './lib/index.js', // 压缩版
     },
     plugins: [new WebpackManifestPlugin(), new CleanWebpackPlugin()],
+    experiments: {
+        outputModule: true,
+    },
     output: {
         path: path.resolve(__dirname, '../dist'),
         filename: '[name].js', // 文件名
-        library: libName, // 模块名
-        libraryTarget: 'umd',
+        library: {
+            type: 'module',
+        },
         globalObject: 'this', // this for browsers and Node; self for Web-like targets
         environment: {
             // The environment supports arrow functions ('() => { ... }').
