@@ -6,7 +6,6 @@
         "dist",
         "lib"
     ],
-    "type": "module",
     "main": "dist/es-sharp.min.js",
     "module": "lib/index.js",
     "sideEffects": false,
