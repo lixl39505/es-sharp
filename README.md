@@ -21,11 +21,3 @@ var _ = require('es-sharp')
 // or
 var { qs } = require('es-sharp')
 ```
-
-Node(ES module):
-
-```js
-import * as _ from 'es-sharp/lib/index.js'
-// or
-import { qs } from 'es-sharp/lib/index.js'
-```
