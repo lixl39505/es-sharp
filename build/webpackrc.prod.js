@@ -35,11 +35,11 @@ const webpackConfig = merge(base, {
 })
 
 // log
-let dist = path.resolve(__dirname, '../dist')
+let lib = path.resolve(__dirname, '../lib')
 
-fs.mkdirSync(dist, { recursive: true })
+fs.mkdirSync(lib, { recursive: true })
 fs.writeFileSync(
-    path.resolve(dist, './webpackrc.prod.json'),
+    path.resolve(lib, './webpackrc.prod.json'),
     JSON.stringify(webpackConfig, null, 4)
 )
 

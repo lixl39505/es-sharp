@@ -39,8 +39,8 @@ module.exports = (api) => {
                 {
                     alias: {
                         // source
-                        '@': './lib',
-                        string: './lib/string',
+                        '@': './src',
+                        string: './src/string',
                         // test
                         '~': './test',
                     },

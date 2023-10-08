@@ -1,13 +1,15 @@
 .DS_Store
 .nyc_output
 node_modules
-/dist
 /debug
 /test/dist
 /test/e2e/videos/
 /test/e2e/screenshots/
 /coverage
 /temp
+/dist
+/lib
+/es
 
 # local env files
 .env.*.local

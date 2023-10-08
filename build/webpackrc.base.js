@@ -7,12 +7,12 @@ const libName = pkg.name
 
 module.exports = {
     entry: {
-        [libName]: './lib/index.js',
-        [libName + '.min']: './lib/index.js', // 压缩版
+        [libName]: './src/index.js',
+        [libName + '.min']: './src/index.js', // 压缩版
     },
     plugins: [new WebpackManifestPlugin(), new CleanWebpackPlugin()],
     output: {
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, '../lib'),
         filename: '[name].js', // 文件名
         library: libName, // 模块名
         libraryTarget: 'umd',

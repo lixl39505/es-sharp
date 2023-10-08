@@ -3,11 +3,11 @@
     "version": "1.4.3",
     "description": "collection of commonly used js functions",
     "files": [
-        "dist",
-        "lib"
+        "lib",
+        "es"
     ],
-    "main": "dist/es-sharp.min.js",
-    "module": "lib/index.js",
+    "main": "lib/es-sharp.min.js",
+    "module": "es/index.mjs",
     "sideEffects": false,
     "scripts": {
         "dev": "webpack-dev-server --open --config build/webpackrc.dev.js",

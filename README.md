@@ -11,7 +11,7 @@ $ npm i es-sharp
 browser:
 
 ```html
-<script src="dist/es-sharp.min.js"></script>
+<script src="es-sharp.min.js"></script>
 ```
 
 Node(commonjs module):

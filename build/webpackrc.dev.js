@@ -8,7 +8,7 @@ const webpackConfig = merge(base, {
     mode: 'development',
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.resolve(__dirname, '../dist'), // 文件根目录
+        contentBase: path.resolve(__dirname, '../lib'), // 文件根目录
         hot: true // 启动热更新
     },
     plugins: [
@@ -22,9 +22,9 @@ const webpackConfig = merge(base, {
 })
 
 // log
-let dist = path.resolve(__dirname, '../dist')
+let lib = path.resolve(__dirname, '../lib')
 
-fs.mkdirSync(dist, { recursive: true })
-fs.writeFileSync(path.resolve(dist, './webpackrc.dev.json'), JSON.stringify(webpackConfig, null, 4))
+fs.mkdirSync(lib, { recursive: true })
+fs.writeFileSync(path.resolve(lib, './webpackrc.dev.json'), JSON.stringify(webpackConfig, null, 4))
 
 module.exports = webpackConfig
