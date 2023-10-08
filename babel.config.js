@@ -15,8 +15,9 @@ module.exports = (api) => {
                 '@babel/preset-env',
                 {
                     useBuiltIns: false, // 手动polyfill
+                    // debug: true,
                     targets: {
-                        ie: '9',
+                        ie: '11',
                     },
                 },
             ],
@@ -26,12 +27,12 @@ module.exports = (api) => {
             [
                 '@babel/plugin-transform-runtime', // 创建沙盒环境
                 {
-                    absoluteRuntime: false, // 支持向上搜索@babel/runtime,但是会依赖绝对路径
-                    corejs: false, // 是否使用corejs polyfill
-                    helpers: true, // 抽离helper函数
-                    regenerator: false, // 转换generator
-                    useESModules: false, // 只兼容esModule
-                    version: '^7.2.0', // 当前@babel/runtime版本号，支持semver
+                    absoluteRuntime: false,
+                    corejs: 3,
+                    helpers: true,
+                    regenerator: true,
+                    useESModules: false,
+                    version: '^7.20.0',
                 },
             ],
             [
