@@ -19,6 +19,7 @@ export default [
                 name: 'esSharp',
                 format: 'umd',
                 plugins: [terser()],
+                sourcemap: 'hidden',
             },
         ],
         plugins: [
