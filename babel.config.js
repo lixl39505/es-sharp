@@ -15,10 +15,13 @@ module.exports = (api) => {
                 '@babel/preset-env',
                 {
                     useBuiltIns: false, // 只转换语法
+                    // useBuiltIns: 'usage',
                     // debug: true,
+                    // corejs: '3',
                     targets: {
                         ie: '11',
                     },
+                    bugfixes: true,
                     loose: true,
                 },
             ],
