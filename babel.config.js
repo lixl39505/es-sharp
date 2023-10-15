@@ -14,11 +14,12 @@ module.exports = (api) => {
             [
                 '@babel/preset-env',
                 {
-                    useBuiltIns: false, // 手动polyfill
+                    useBuiltIns: false, // 只转换语法
                     // debug: true,
                     targets: {
                         ie: '11',
                     },
+                    loose: true,
                 },
             ],
         ],
@@ -27,8 +28,7 @@ module.exports = (api) => {
                 '@babel/plugin-transform-runtime', // 创建沙盒环境
                 {
                     absoluteRuntime: false,
-                    // corejs: 3,
-                    corejs: false,
+                    corejs: false, // polyfill 太笨重
                     helpers: true,
                     regenerator: true,
                     useESModules: false,
@@ -36,7 +36,7 @@ module.exports = (api) => {
                 },
             ],
             [
-                'module-resolver', // 支持alias-path
+                'module-resolver', // 支持 alias-path
                 {
                     alias: {
                         // source

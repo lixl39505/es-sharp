@@ -7,13 +7,11 @@ export default [
     {
         input: 'src/index.js',
         output: [
-            // 输出 umd
             {
                 file: 'lib/es-sharp.js',
                 name: 'esSharp',
                 format: 'umd',
             },
-            // 输出 umd.min
             {
                 file: 'lib/es-sharp.min.js',
                 name: 'esSharp',
