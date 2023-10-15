@@ -8,16 +8,24 @@ collection of commonly used js functions.
 $ npm i es-sharp
 ```
 
-browser:
+UMD:
 
 ```html
-<script src="es-sharp.min.js"></script>
+<script src="es-sharp/lib/es-sharp.min.js"></script>
 ```
 
-Node(commonjs module):
+CMD：
 
 ```js
 var _ = require('es-sharp')
 // or
 var { qs } = require('es-sharp')
+```
+
+ESM:
+
+```js
+import * as _ from 'es-sharp/es/index.mjs'
+// or
+import qs from 'es-sharp/es/index.mjs'
 ```
