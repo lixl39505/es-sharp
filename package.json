@@ -1,6 +1,6 @@
 {
     "name": "es-sharp",
-    "version": "1.4.3",
+    "version": "1.4.4",
     "description": "collection of commonly used js functions",
     "files": [
         "lib",
