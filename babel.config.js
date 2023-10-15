@@ -23,12 +23,12 @@ module.exports = (api) => {
             ],
         ],
         plugins: [
-            '@babel/plugin-syntax-dynamic-import', // 支持import()动态导入
             [
                 '@babel/plugin-transform-runtime', // 创建沙盒环境
                 {
                     absoluteRuntime: false,
-                    corejs: 3,
+                    // corejs: 3,
+                    corejs: false,
                     helpers: true,
                     regenerator: true,
                     useESModules: false,
