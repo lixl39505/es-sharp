@@ -2,18 +2,21 @@
 	函数式编程相关 
 */
 
-// 偏函数
-export const partial =
-    (f, ...arr) =>
-    (...args) =>
-        ((a) => (a.length === f.length ? f(...a) : partial(f, ...a)))([
-            ...arr,
-            ...args,
-        ])
-// alias
-export { partial as curry }
+// 柯里化
+export function curry(fn) {
+    return function curried(...args) {
+        if (args.length >= fn.length) {
+            return fn(...args)
+        } else {
+            return function (...nextArgs) {
+                return curried(...args.concat(nextArgs))
+            }
+        }
+    }
+}
+export { curry as partial } // alias
 
-// 单例
+// 只执行一次
 export function once(fn) {
     var called = false,
         result
@@ -103,3 +106,15 @@ export function throttle(delay, callback, options = {}, debounceMode) {
 export function debounce(delay, callback, options) {
     return throttle(delay, callback, options, true)
 }
+
+// 函数组合
+export const compose =
+    (...fns) =>
+    (arg) =>
+        fns.reduceRight((acc, fn) => fn(acc), arg)
+
+// 函数管道
+export const flow =
+    (...fns) =>
+    (arg) =>
+        fns.reduce((acc, fn) => fn(acc), arg)
