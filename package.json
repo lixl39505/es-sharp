@@ -22,14 +22,13 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/pixelsLee/es-sharp.git"
+        "url": "https://github.com/lixl39505/es-sharp.git"
     },
     "keywords": [
         "js",
         "function",
         "tool"
     ],
-    "author": "pixelsLee <pixelslee@foxmail.com>",
     "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.23.0",
